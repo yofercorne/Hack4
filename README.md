@@ -204,14 +204,23 @@ export default function Group() {
   }, []); // El [] como segundo argumento asegura que useEffect se ejecute solo una vez al montar el componente.
 
   return (
-    <DataGrid
-      dataSource={groupsWithPersonCount}
-      showBorders={true}
-    >
-      <Column dataField="id" width={50} />
-      <Column dataField="name" />
-      <Column dataField="personCount" caption="Number of Persons" />
-    </DataGrid>
+      <DataGrid
+        // Establece la fuente de datos para el DataGrid como 'groupsWithPersonCount'.
+        dataSource={groupsWithPersonCount}
+        
+        // Muestra bordes alrededor de las celdas de la tabla.
+        showBorders={true}
+      >
+        {/* Define la primera columna con el campo 'id' y un ancho de 50 píxeles. */}
+        <Column dataField="id" width={50} />
+        
+        {/* Define la segunda columna con el campo 'name'. */}
+        <Column dataField="name" />
+        
+        {/* Define la tercera columna con el campo 'personCount' y un título personalizado 'Number of Persons'. */}
+        <Column dataField="personCount" caption="Number of Persons" />
+      </DataGrid>
+
   )
 }
 ```
