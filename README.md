@@ -50,6 +50,9 @@
 
 7. Haz clic en "Apply" (Aplicar) y luego en "OK" para guardar la configuración.
 
+   ![Descripción de la Captura de Pantalla]([nombre_del_archivo.png](https://cdn.discordapp.com/attachments/834907040886554694/1169000186324992090/image.png?ex=6553cf43&is=65415a43&hm=cf6ea06a710958a335b90ec66a83cf3e175d1887c230baeca4b7414cfa2a6bf1&))
+
+
 ## Paso 5: Ejecutar la Aplicación
 
 1. Ahora, en la parte superior de IntelliJ IDEA, selecciona la configuración de Spring Boot que acabas de crear en el menú desplegable junto al botón de "Run" (Ejecutar).
