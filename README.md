@@ -82,7 +82,7 @@
 
 1. Nos vamos al directorio padre de nuestro proyecto.
 ```
-cd '/home/mateo/Desktop/hck4-gu-a' 
+cd '/ejemplo/de/ruta/hck4-gu-a' 
 ```
 
 2. Iniciamos un nuevo proyecto dev-extreme
