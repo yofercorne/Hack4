@@ -76,3 +76,144 @@
 4. Ahora van a poder interactuar de forma más directa con la base de datos creando y eliminando elementos de las tablas con más facilidad!
 
 ![La configuración se tiene que ver de esta manera](https://media.discordapp.net/attachments/834907040886554694/1169002780229369866/image.png?ex=6553d1ad&is=65415cad&hm=95891bed36d7b734a55ce9b1735c44a9bde7739c1a114fde62eda2e08397ac86&=&width=958&height=537)
+
+
+## Paso 7: Empezando con DevExtreme!
+
+1. Nos vamos al directorio padre de nuestro proyecto.
+```
+cd '/home/mateo/Desktop/hck4-gu-a' 
+```
+
+2. Iniciamos un nuevo proyecto dev-extreme
+```
+npx devextreme-cli new react-app app-name
+```
+
+Seleccionamos:
+Specify desired template type: › JavaScript
+Specify desired application layout: Side navigation (outer toolbar)
+
+
+## Paso 8: Probamos el proyecto! 
+
+1. Luego de haber creado este ambiente, entramos a app-name e iniciamos el programa!
+```
+cd app-name
+npm start
+```
+
+## Paso 9:
+
+1. Vamos a crear los siguientes 2 archivos:
+
+![La configuración se tiene que ver de esta manera](https://cdn.discordapp.com/attachments/834907040886554694/1169004877138120734/image.png?ex=6553d3a1&is=65415ea1&hm=94c2b89e99ade43bc7c13e0ee21223aafe7cfae30dc4b727fff4f0fd3434fcc1&)
+
+2. Realizamos los siguientes cambios en `index.js`:
+
+```
+export { default as HomePage } from './home/home';
+export { default as ProfilePage } from './profile/profile';
+export { default as TasksPage } from './tasks/tasks';
+export { default as GroupsPage } from './groups/groups';
+```
+
+3. Realizamos los siguientes cambios en `app-navigation.js`:
+
+```
+export const navigation = [
+  {
+    text: 'Home',
+    path: '/home',
+    icon: 'home'
+  },
+  {
+    text: 'Examples',
+    icon: 'folder',
+    items: [
+      {
+        text: 'Profile',
+        path: '/profile'
+      },
+      {
+        text: 'Tasks',
+        path: '/tasks'
+      },
+      {
+        text: 'Groups',
+        path: '/groups'
+      }
+    ]
+  }
+  ];
+```
+
+4. Escribimos el siguiente código en `dataService.js`:
+
+```
+import axios from 'axios';
+
+// Definición de la URL base para las solicitudes al servidor.
+const BASE_URL = 'http://localhost:8080';
+
+// Función asincrónica para recuperar grupos desde el servidor.
+export const fetchGroups = async () => {
+    // Utiliza Axios para hacer una solicitud GET a la URL de grupos.
+    return axios.get(`${BASE_URL}/groups`)
+}
+
+```
+
+Nota*: Asegurence de instalar axios 
+```
+npm install axios
+```
+ 
+5. Escribimos el siguiente código en `groups.js`:
+
+``` 
+import { useEffect, useState } from "react"
+import { fetchGroups } from "../../api/dataService"
+import 'devextreme/data/odata/store';
+import DataGrid, { Column } from 'devextreme-react/data-grid';
+
+export default function Group() {
+  // Se declara un estado llamado 'groupsWithPersonCount' utilizando useState.
+  const [groupsWithPersonCount, setGroupsWithPersonCount] = useState();
+
+  // Utiliza useEffect para realizar la solicitud a la API cuando el componente se monta.
+  useEffect(() => {
+    fetchGroups()
+      .then((response) => {
+        // Extrae los datos de respuesta de la solicitud.
+        const groupsData = response.data;
+
+        // Registra los datos de grupos en la consola.
+        console.log(groupsData);
+
+        // Modifica el estado 'groupsWithPersonCount' transformando los datos de grupos.
+        setGroupsWithPersonCount(groupsData.map(group => ({
+          id: group.id,
+          name: group.name,
+          personCount: group.persons ? group.persons.length : 0    
+        })))
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }, []); // El [] como segundo argumento asegura que useEffect se ejecute solo una vez al montar el componente.
+
+  return (
+    <DataGrid
+      dataSource={groupsWithPersonCount}
+      showBorders={true}
+    >
+      <Column dataField="id" width={50} />
+      <Column dataField="name" />
+      <Column dataField="personCount" caption="Number of Persons" />
+    </DataGrid>
+  )
+}
+```
+
+
