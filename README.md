@@ -58,3 +58,9 @@
 1. Ahora, en la parte superior de IntelliJ IDEA, selecciona la configuración de Spring Boot que acabas de crear en el menú desplegable junto al botón de "Run" (Ejecutar).
 
 2. Haz clic en el botón de "Run" (Ejecutar) para iniciar la aplicación Spring Boot.
+
+## Paso 6: Interacción con la BD
+
+1. Hacemos click en el ícono de bd a la izquierda superior de intellij.
+   
+![La configuración se tiene que ver de esta manera](https://cdn.discordapp.com/attachments/834907040886554694/1169001187232723054/image.png?ex=6553d032&is=65415b32&hm=07c27b5a1c5c3f49cf1ce92dbcbc1e22669d7a784f67dfccd434755bce285f54&)
