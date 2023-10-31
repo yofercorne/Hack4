@@ -111,7 +111,7 @@ npm start
 
 2. Realizamos los siguientes cambios en `index.js`:
 
-```
+```js
 export { default as HomePage } from './home/home';
 export { default as ProfilePage } from './profile/profile';
 export { default as TasksPage } from './tasks/tasks';
@@ -120,7 +120,7 @@ export { default as GroupsPage } from './groups/groups';
 
 3. Realizamos los siguientes cambios en `app-navigation.js`:
 
-```
+```js
 export const navigation = [
   {
     text: 'Home',
