@@ -64,3 +64,15 @@
 1. Hacemos click en el ícono de bd a la izquierda superior de intellij.
    
 ![La configuración se tiene que ver de esta manera](https://cdn.discordapp.com/attachments/834907040886554694/1169001187232723054/image.png?ex=6553d032&is=65415b32&hm=07c27b5a1c5c3f49cf1ce92dbcbc1e22669d7a784f67dfccd434755bce285f54&)
+
+2. Hacemos click en el ícono '+' y agregamos una conección a PostgreSQL
+
+![La configuración se tiene que ver de esta manera](https://cdn.discordapp.com/attachments/834907040886554694/1169001800846811247/image.png?ex=6553d0c4&is=65415bc4&hm=08ed45180a1d17e3f8952f5863ded2acd78064926459ff12f6bbb033ccf3efae&)
+
+3. Asegúrence que los ajustes sean los correctos. (usuario, contraseña)
+
+![La configuración se tiene que ver de esta manera](https://cdn.discordapp.com/attachments/834907040886554694/1169002252388798604/image.png?ex=6553d12f&is=65415c2f&hm=b8efc7365799a0eb71d82b27c9b5bdfebc42a6514e90b9caf63270f478455b35&)
+
+4. Ahora van a poder interactuar de forma más directa con la base de datos creando y eliminando elementos de las tablas con más facilidad!
+
+![La configuración se tiene que ver de esta manera](https://media.discordapp.net/attachments/834907040886554694/1169002780229369866/image.png?ex=6553d1ad&is=65415cad&hm=95891bed36d7b734a55ce9b1735c44a9bde7739c1a114fde62eda2e08397ac86&=&width=958&height=537)
