@@ -91,8 +91,8 @@ npx devextreme-cli new react-app app-name
 ```
 
 Seleccionamos:
-Specify desired template type: › JavaScript
-Specify desired application layout: Side navigation (outer toolbar)
+* Specify desired template type: › JavaScript
+* Specify desired application layout: Side navigation (outer toolbar)
 
 
 ## Paso 8: Probamos el proyecto! 
