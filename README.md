@@ -150,7 +150,7 @@ export const navigation = [
 
 4. Escribimos el siguiente código en `dataService.js`:
 
-```
+```js
 import axios from 'axios';
 
 // Definición de la URL base para las solicitudes al servidor.
@@ -171,7 +171,7 @@ npm install axios
  
 5. Escribimos el siguiente código en `groups.js`:
 
-``` 
+```js 
 import { useEffect, useState } from "react"
 import { fetchGroups } from "../../api/dataService"
 import 'devextreme/data/odata/store';
